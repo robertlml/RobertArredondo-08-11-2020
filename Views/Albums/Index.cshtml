@@ -1,0 +1,30 @@
+﻿@model IEnumerable<ConsumirCli.Models.Albums>
+
+@{
+    ViewBag.Title = "Albums";
+}
+
+    <h2>Albums</h2>
+
+<table class="table">
+    <tr>
+        <th>UserId</th>
+        <th>title</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.title)
+            </td>
+            <td>
+                @Html.ActionLink("Vizualizar", "Vizualizar", new { id = item.Id }) 
+            </td>
+        </tr>
+    }
+
+</table>
